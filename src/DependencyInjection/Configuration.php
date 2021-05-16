@@ -24,7 +24,7 @@ class Configuration implements ConfigurationInterface
                     ->cannotBeEmpty()
                 ->end()
                 ->scalarNode('http_client')
-                    ->defaultValue(new Client())
+                    ->defaultValue('@GuzzleHttpClient')
                 ->end()
             ->end()
         ;
