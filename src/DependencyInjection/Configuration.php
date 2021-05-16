@@ -13,7 +13,6 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder('proxy_scrape');
 
         $treeBuilder->getRootNode()
-
             ->children()
                 ->scalarNode('base_url')
                     ->isRequired()
@@ -24,7 +23,7 @@ class Configuration implements ConfigurationInterface
                     ->cannotBeEmpty()
                 ->end()
                 ->scalarNode('http_client')
-                    ->defaultValue('@GuzzleHttpClient')
+                    ->defaultValue('GuzzleHttp\Client')
                 ->end()
             ->end()
         ;

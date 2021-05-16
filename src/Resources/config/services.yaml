@@ -1,3 +1,2 @@
 services:
-  GuzzleHttpClient:
-    class: GuzzleHttp\Client
+  GuzzleHttp\Client: ~
