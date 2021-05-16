@@ -7,9 +7,16 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Reference;
+use ReflectionClass;
+use ReflectionException;
 
 class ProxyScrapeExtension extends Extension
 {
+    /**
+     * @param array $configs
+     * @param ContainerBuilder $container
+     * @throws ReflectionException
+     */
     public function load(array $configs, ContainerBuilder $container)
     {
 //        $loader = new YamlFileLoader($container, new FileLocator(dirname(__DIR__) . '/Resources/config'));
@@ -23,7 +30,7 @@ class ProxyScrapeExtension extends Extension
 
         $definition = new Definition(ProxyScrape\Client::class);
         $definition->setFactory([$factoryReference, 'create']);
-        $definition->setArguments([$configs['auth'], $configs['base_url'], $configs['http_client']]);
+        $definition->setArguments([$configs['auth'], $configs['base_url'], new ReflectionClass(get_class($configs['http_client']))]);
         $definition->setPublic(true);
 
         $container->setDefinition(sprintf('%s.%s', $this->getAlias(), 'client'), $definition);
