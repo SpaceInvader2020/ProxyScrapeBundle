@@ -13,7 +13,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "PhpForce\\ProxyScrapeBundle\\": ""
+            "PhpForce\\ProxyScrapeBundle\\": "src/"
         },
         "exclude-from-classmap": [
             "/Tests/"
