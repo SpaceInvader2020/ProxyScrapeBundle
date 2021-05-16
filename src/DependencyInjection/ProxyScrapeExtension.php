@@ -15,8 +15,8 @@ class ProxyScrapeExtension extends Extension
 //        $loader = new YamlFileLoader($container, new FileLocator(dirname(__DIR__) . '/Resources/config'));
 //        $loader->load('services.yaml');
 //
-//        $configuration = $this->getConfiguration($configs, $container);
-//        $config = $this->processConfiguration($configuration, $configs);
+        $configuration = $this->getConfiguration($configs, $container);
+        $configs = $this->processConfiguration($configuration, $configs);
 
         $factoryReference = new Reference(ProxyScrape\FactoryInterface::class);
         $container->setDefinition($factoryReference, new Definition(ProxyScrape\Factory::class));
