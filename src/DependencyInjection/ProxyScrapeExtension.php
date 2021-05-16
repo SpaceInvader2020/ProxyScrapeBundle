@@ -9,7 +9,6 @@ use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\DependencyInjection\Reference;
-use ReflectionClass;
 use ReflectionException;
 
 class ProxyScrapeExtension extends Extension
@@ -17,7 +16,6 @@ class ProxyScrapeExtension extends Extension
     /**
      * @param array $configs
      * @param ContainerBuilder $container
-     * @throws ReflectionException
      */
     public function load(array $configs, ContainerBuilder $container)
     {
