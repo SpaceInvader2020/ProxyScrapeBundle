@@ -2,6 +2,7 @@
 
 namespace PhpForce\ProxyScrapeBundle\DependencyInjection;
 
+use GuzzleHttp\Client;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -15,12 +16,15 @@ class Configuration implements ConfigurationInterface
 
             ->children()
                 ->scalarNode('base_url')
-//                    ->isRequired()
-//                    ->cannotBeEmpty()
+                    ->isRequired()
+                    ->cannotBeEmpty()
                 ->end()
                 ->scalarNode('auth')
-//                    ->isRequired()
-//                    ->cannotBeEmpty()
+                    ->isRequired()
+                    ->cannotBeEmpty()
+                ->end()
+                ->scalarNode('http_client')
+                    ->defaultValue(new Client())
                 ->end()
             ->end()
         ;
