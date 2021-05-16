@@ -29,10 +29,11 @@ class ProxyScrapeExtension extends Extension
 
         $factoryReference = new Reference(ProxyScrape\FactoryInterface::class);
         $container->setDefinition($factoryReference, new Definition(ProxyScrape\Factory::class));
-        $httpClient = $container->findDefinition($configs['http_client']);
+
+        $httpClientReference = new Reference($configs['http_client']);
         $definition = new Definition(ProxyScrape\Client::class);
         $definition->setFactory([$factoryReference, 'create']);
-        $definition->setArguments([$configs['auth'], $configs['base_url'], $httpClient]);
+        $definition->setArguments([$configs['auth'], $configs['base_url'], $httpClientReference]);
         $definition->setPublic(true);
 
         $container->setDefinition(sprintf('%s.%s', $this->getAlias(), 'client'), $definition);
