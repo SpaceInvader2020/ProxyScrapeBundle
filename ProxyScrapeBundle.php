@@ -1,6 +1,6 @@
 <?php
 
-namespace App\SpaceInvader\ProxyScrapeBundle;
+namespace PhpForce\ProxyScrapeBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

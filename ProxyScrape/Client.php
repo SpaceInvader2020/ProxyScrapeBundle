@@ -1,6 +1,6 @@
 <?php
 
-namespace App\SpaceInvader\ProxyScrapeBundle\ProxyScrape;
+namespace PhpForce\ProxyScrapeBundle\ProxyScrape;
 
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
