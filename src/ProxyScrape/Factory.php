@@ -2,12 +2,14 @@
 
 namespace PhpForce\ProxyScrapeBundle\ProxyScrape;
 
+use Psr\Http\Client\ClientInterface;
+
 class Factory
 {
     protected static string $clientClass = Client::class;
 
-    public static function create(array $parameters = [], array $options = []): ClientInterface
+    public static function create(string $auth, string $baseUrl, ClientInterface $httpClient): ClientInterface
     {
-        return new static::$clientClass($parameters, $options);
+        return new static::$clientClass($auth, $baseUrl, $httpClient);
     }
 }
