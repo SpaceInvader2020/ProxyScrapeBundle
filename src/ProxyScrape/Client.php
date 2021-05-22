@@ -2,17 +2,17 @@
 
 namespace PhpForce\ProxyScrapeBundle\ProxyScrape;
 
-use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
 use Psr\Http\Message\ResponseInterface;
+use GuzzleHttp\ClientInterface as GuzzleClient;
 
-class Client
+class Client implements ClientInterface
 {
     private string $auth;
     private string $baseUrl;
-    private ClientInterface $httpClient;
+    private GuzzleClient $httpClient;
 
-    public function __construct(string $auth, string $baseUrl, ClientInterface $httpClient)
+    public function __construct(string $auth, string $baseUrl, GuzzleClient $httpClient)
     {
         $this->auth = $auth;
         $this->baseUrl = $baseUrl;
