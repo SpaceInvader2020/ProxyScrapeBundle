@@ -23,8 +23,8 @@
     "require": {
         "php": ">=7.4",
         "guzzlehttp/guzzle": "^7.2",
-        "symfony/framework-bundle": ">=6.0.0",
-        "symfony/yaml": ">=6.0.0"
+        "symfony/framework-bundle": ">=5.2.0",
+        "symfony/yaml": ">=6.2.0"
     },
     "extra": {
         "branch-alias": {
