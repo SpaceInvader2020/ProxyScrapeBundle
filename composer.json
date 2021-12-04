@@ -5,6 +5,7 @@
     "keywords": ["proxy-scrape", "php-force", "symfony", "bundle"],
     "homepage": "https://github.com/php-force/proxy-scrape-bundle",
     "license": "MIT",
+    "version": "1.0.0",
     "authors": [
         {
             "name": "PHP Force",
