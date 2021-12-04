@@ -24,7 +24,7 @@
         "php": ">=7.4",
         "guzzlehttp/guzzle": "^7.2",
         "symfony/framework-bundle": ">=5.2.0",
-        "symfony/yaml": ">=6.2.0"
+        "symfony/yaml": ">=5.2.0"
     },
     "extra": {
         "branch-alias": {
