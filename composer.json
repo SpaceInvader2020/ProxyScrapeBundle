@@ -20,7 +20,7 @@
         ]
     },
     "require": {
-        "php": "^7.4||^8.0",
+        "php": "^7.4||8.*",
         "guzzlehttp/guzzle": "^7.2",
         "symfony/framework-bundle": "^4.4||^5.0",
         "symfony/yaml": "^4.4||^5.0"
